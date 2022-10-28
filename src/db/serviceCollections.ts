@@ -194,7 +194,7 @@ export function update_collection_plans() {
 			$jsonSchema: {
 				bsonType: 'object',
 				title: 'Plans Object Validation',
-				required: ['title', 'welcome_messages', 'urls'],
+				required: ['title', 'welcome_messages', 'slug', 'urls'],
 				properties: {
 					title: {
 						bsonType: 'string',
@@ -239,6 +239,10 @@ export function update_collection_plans() {
 								}
 							}
 						}
+					},
+					slug: {
+						bsonType: 'string',
+						description: "'slug' must be a string and is required"
 					},
 					urls: {
 						bsonType: 'object',

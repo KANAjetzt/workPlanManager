@@ -32,6 +32,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"mongodb": "^4.11.0"
+		"mongodb": "^4.11.0",
+		"slugify": "^1.6.5"
 	}
 }

@@ -1,12 +1,13 @@
 import type { InsertOneResult, ObjectId } from 'mongodb';
 import db from '$db/mongo';
 
-interface Plan {
+export interface Plan {
 	title: string;
 	urls: {
 		admin: string;
 		share: string;
 	};
+	slug: string;
 	welcome_messages: {
 		admin: {
 			heading: string;

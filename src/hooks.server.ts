@@ -6,8 +6,8 @@ start_mongo()
 		console.log('Mongo started');
 
 		// Update schema for plans collection
-		// const command = await update_collection_plans();
-		// console.log(command);
+		const command = await update_collection_plans();
+		console.log(command);
 	})
 	.catch((e) => {
 		console.error(e);
