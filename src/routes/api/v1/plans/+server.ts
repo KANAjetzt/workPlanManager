@@ -1,7 +1,6 @@
-import { error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
+import { error, json } from '@sveltejs/kit';
 import { new_plan } from '$db/plans';
-import type { InsertOneResult } from 'mongodb';
 
 export const POST: RequestHandler = async ({ request }) => {
 	// get data from frontend
@@ -9,17 +8,17 @@ export const POST: RequestHandler = async ({ request }) => {
 	console.log(data);
 
 	// send data to db
-	const new_plan_data = await new_plan(data).catch((e) => {
+	const { insertedId } = await new_plan(data).catch((e) => {
 		console.error('ERROR: Creating new plan failed');
 		console.error(e);
+
+		return error(500, 'Creating new plan failed');
 	});
 
 	// return new response
-	return new Response(
-		JSON.stringify({
-			status: 'success',
-			documentId: new_plan_data.insertedId,
-			data
-		})
-	);
+	return json({
+		status: 'success',
+		documentId: insertedId,
+		data
+	});
 };

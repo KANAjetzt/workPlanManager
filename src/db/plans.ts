@@ -41,6 +41,6 @@ interface Plan {
 	];
 }
 
-export function new_plan(data: Plan): Promise<InsertOneResult> {
+export function new_plan(data: Plan): Promise<InsertOneResult<Document>> {
 	return db.collection('plans').insertOne(data);
 }
