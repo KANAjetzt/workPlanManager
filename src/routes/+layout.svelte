@@ -1,5 +1,5 @@
 <script>
-	import '../global.css';
+	import '../global.postcss';
 </script>
 
 <main>
@@ -8,9 +8,9 @@
 
 <style>
 	main {
+		padding: 2rem 1rem;
 		min-height: 100vh;
 		display: grid;
-		grid-template-rows: 1fr;
 		grid-auto-rows: min-content;
 	}
 </style>

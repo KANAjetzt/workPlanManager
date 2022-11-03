@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #333;
+	font-family: var(--base-font);
+}
+
+body {
+	--primary_color: hsl(45, 87%, 55%);
+	--primary_color_light_20: hsl(45, 87%, 75%);
+	--secondary_color: hsl(176, 95%, 17%);
+	--shadow_color_a_15: hsla(0, 0%, 0%, 0.15);
+	/* --tertiary: */
+	--base-font: 'Noto Sans', sans-serif;
+	--date-input-width: 9rem;
+}
+
+body {
+	--btn_check_bg_color: var(--secondary_color);
+	--input_inactive_bg_color: var(--primary_color_light_20);
+	--input_inactive_border_color: var(--secondary_color);
+	--card_shadow_color: var(--shadow_color_a_15);
+	--date-picker-background: var(--primary_color_light_20);
+	--date-picker-foreground: var(--secondary_color);
+	--date-picker-highlight-border: var(--secondary_color);
+}
+
+input {
+	font-family: var(--base-font);
+	-webkit-appearance: none;
+}
