@@ -2,12 +2,14 @@
 	import { DateInput } from 'date-picker-svelte';
 	import './Date.postcss';
 
+	export let placeholder: string = 'Datum';
+
 	let date: Date | null = null;
 </script>
 
 <DateInput
 	bind:value={date}
-	placeholder={'Date'}
+	{placeholder}
 	format={'dd.MM.yyyy'}
 	locale={{
 		weekdays: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],

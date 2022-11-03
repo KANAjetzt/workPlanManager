@@ -1,4 +1,8 @@
-<input type="number" name="" id="" placeholder="Anzahl" />
+<script lang="ts">
+	export let placeholder: string = 'Anzahl';
+</script>
+
+<input type="number" name="" id="" {placeholder} />
 
 <style lang="postcss">
 	input {

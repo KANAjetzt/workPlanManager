@@ -6,10 +6,13 @@
 	import Card_Main from './Card_Main.svelte';
 </script>
 
-<Card_Main bg={2}>
+<Card_Main bg={0}>
 	<div class="inputs">
 		<div class="text">
-			<Input_Text />
+			<Input_Text placeholder={"Tag (z.B. Montag)"}/>
+		</div>
+		<div class="date">
+			<Input_Date />
 		</div>
 		<div class="count">
 			<Input_Count />
@@ -28,12 +31,15 @@
 		grid-column-gap: 1rem;
 		grid-row-gap: 1rem;
 		align-items: center;
-		padding: 0.75rem 1rem;
+		padding: 1rem;
 	}
 
 	.text {
 		width: 9rem;
-		grid-row: span 2;
+	}
+
+	.date {
+		width: 9rem;
 	}
 
 	.count {

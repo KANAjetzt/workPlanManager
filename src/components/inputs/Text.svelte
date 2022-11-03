@@ -1,4 +1,8 @@
-<input type="text" placeholder="Text" />
+<script lang="ts">
+	export let placeholder: string = 'Text';
+</script>
+
+<input type="text" {placeholder} />
 
 <style lang="postcss">
 	input {

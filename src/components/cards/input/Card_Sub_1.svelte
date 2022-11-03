@@ -6,10 +6,13 @@
 	import Card_Main from './Card_Main.svelte';
 </script>
 
-<Card_Main bg={3}>
+<Card_Main bg={1}>
 	<div class="inputs">
 		<div class="text">
-			<Input_Text />
+			<Input_Text placeholder={"Ort (z.B. Küche)"}/>
+		</div>
+		<div class="count">
+			<Input_Count />
 		</div>
 	</div>
 	<div class="btn_check">
@@ -25,13 +28,12 @@
 		grid-column-gap: 1rem;
 		grid-row-gap: 1rem;
 		align-items: center;
-		padding: 0.75rem 1rem;
+		padding: 1rem;
 	}
 
 	.text {
-		width: 15rem;
+		width: 9rem;
 		grid-row: span 2;
-		grid-column: 1 / 3;
 	}
 
 	.count {
