@@ -30,7 +30,7 @@
 		z-index: 8;
 	}
 	.bg_3 {
-		background-color: var(--primary_color);
+		background-color: var(--card_background_color_sub_3);
 		z-index: 7;
 	}
 </style>
