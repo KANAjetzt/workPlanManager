@@ -3,9 +3,10 @@
 	import Input_Text from '$comps/inputs/Text.svelte';
 	import Input_Date from '$comps/inputs/Date.svelte';
 	import Input_Count from '$comps/inputs/Count.svelte';
+	import Card_Main from './Card_Main.svelte';
 </script>
 
-<div class="card">
+<Card_Main bg={0}>
 	<div class="inputs">
 		<div class="text">
 			<Input_Text />
@@ -20,19 +21,9 @@
 	<div class="btn_check">
 		<Btn_Check />
 	</div>
-</div>
+</Card_Main>
 
 <style lang="postcss">
-	.card {
-		display: grid;
-		grid-template-columns: max-content 1fr;
-		grid-row-gap: 1rem;
-		align-items: center;
-		border-radius: 3px;
-		background-color: var(--primary_color);
-		box-shadow: 2px 4px 4px var(--card_shadow_color);
-	}
-
 	.inputs {
 		display: grid;
 		grid-template-columns: max-content max-content;
@@ -45,13 +36,10 @@
 
 	.text {
 		width: 9rem;
-		grid-column: 1 / 2;
-		grid-row: 1 / 2;
 	}
 
 	.date {
-		grid-column: 1 / 2;
-		grid-row: 2 / 3;
+		width: 9rem;
 	}
 
 	.count {
