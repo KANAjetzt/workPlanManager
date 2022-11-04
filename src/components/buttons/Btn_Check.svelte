@@ -1,8 +1,10 @@
-<script>
+<script lang="ts">
 	import Check from '$icons/Check.svelte';
+
+	export let border_radius: number = 0;
 </script>
 
-<button>
+<button class={`border_radius_${border_radius}`}>
 	<Check fill={'#fff'} background={true} />
 </button>
 
@@ -16,5 +18,13 @@
 		border: none;
 		border-radius: 0 3px 3px 0;
 		background-color: var(--btn_check_bg_color);
+	}
+
+	.border_radius_0 {
+		border-radius: 0 3px 3px 0;
+	}
+
+	.border_radius_1 {
+		border-radius: 3px;
 	}
 </style>

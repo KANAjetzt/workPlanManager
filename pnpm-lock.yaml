@@ -7,6 +7,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.42.0
   '@typescript-eslint/parser': ^5.42.0
   autoprefixer: ^10.4.13
+  body-scroll-lock: 4.0.0-beta.0
   date-picker-svelte: ^2.2.1
   eslint: ^8.26.0
   eslint-config-prettier: ^8.5.0
@@ -25,6 +26,7 @@ specifiers:
   vite: ^3.2.2
 
 dependencies:
+  body-scroll-lock: 4.0.0-beta.0
   date-picker-svelte: 2.2.1
   mongodb: 4.11.0
   slugify: 1.6.5
@@ -1324,6 +1326,10 @@ packages:
     dependencies:
       file-uri-to-path: 1.0.0
     dev: true
+
+  /body-scroll-lock/4.0.0-beta.0:
+    resolution: {integrity: sha512-a7tP5+0Mw3YlUJcGAKUqIBkYYGlYxk2fnCasq/FUph1hadxlTRjF+gAcZksxANnaMnALjxEddmSi/H3OR8ugcQ==}
+    dev: false
 
   /bowser/2.11.0:
     resolution: {integrity: sha512-AlcaJBi/pqqJBIQ8U9Mcpc9i8Aqxn88Skv5d+xBX006BY5u8N3mGLHa5Lgppa7L/HfwgwLgZ6NYs+Ag6uUmJRA==}

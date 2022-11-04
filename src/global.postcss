@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap');
 
 *,
 *::before,
@@ -25,15 +25,19 @@ body {
 	--primary_color_light_20: hsl(45, 87%, 75%);
 	--secondary_color: hsl(176, 95%, 17%);
 	--shadow_color_a_15: hsla(0, 0%, 0%, 0.15);
+	--white_dark_10: hsl(0, 0%, 90%);
 	/* --tertiary: */
 	--base-font: 'Noto Sans', sans-serif;
 	--date-input-width: 9rem;
+  --modal_top_spacing: 15vh;
 }
 
 body {
 	--btn_check_bg_color: var(--secondary_color);
+	--btn_copy_icon_color: var(--secondary_color);
 	--input_inactive_bg_color: var(--primary_color_light_20);
 	--input_inactive_border_color: var(--secondary_color);
+	--input_link_bg_color: var(--white_dark_10);
 	--card_shadow_color: var(--shadow_color_a_15);
 	--card_background_color_sub_0: var(--primary_color);
 	--card_background_color_sub_1: var(--primary_color_light_5);
@@ -42,6 +46,7 @@ body {
 	--date-picker-background: var(--primary_color_light_20);
 	--date-picker-foreground: var(--secondary_color);
 	--date-picker-highlight-border: var(--secondary_color);
+	--welcome_message_text_color: var(--white_dark_10);
 }
 
 input {
