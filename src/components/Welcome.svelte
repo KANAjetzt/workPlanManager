@@ -2,6 +2,7 @@
 	import Modal from '$lib/Modal.svelte';
 	import Link from '$comps/inputs/Link.svelte';
 	import Btn_Check from './buttons/Btn_Check.svelte';
+	import Name from './inputs/Name.svelte';
 </script>
 
 <Modal name={'modal_is_open'}>
@@ -10,6 +11,11 @@
 			<h2>Hi!</h2>
 			<p>Speicher dir die unten stehenden Links ab um auf deine Arbeitsplan zugreifen zu können.</p>
 		</div>
+
+		<div class="name">
+			<Name />
+		</div>
+
 		<div class="links">
 			<div class="link">
 				<Link placeholder={'Admin Link'} />
@@ -55,8 +61,12 @@
 		font-weight: 400;
 	}
 
+  .name {
+    margin-bottom: 3rem;
+  }
+
 	.links {
-		margin-bottom: 3rem;
+		margin-bottom: 4rem;
 	}
 
 	.link {
