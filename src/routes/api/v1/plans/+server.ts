@@ -3,6 +3,7 @@ import type { Plan } from '$db/plans';
 import { error, json } from '@sveltejs/kit';
 import slugify from 'slugify';
 import { new_plan } from '$db/plans';
+import { default_plan_data } from '../../../../stores';
 
 function getRandomURLPath(): string {
 	// Generate a random URL Path for the share link
@@ -12,6 +13,14 @@ function getRandomURLPath(): string {
 
 	return uuid_split[uuid_split.length - 1];
 }
+
+export const GET: RequestHandler = async () => {
+	// Send default plan data
+	return json({
+		status: 'success',
+		data: default_plan_data
+	});
+};
 
 export const POST: RequestHandler = async ({ request }) => {
 	// Get data from frontend
