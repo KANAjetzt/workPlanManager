@@ -1,32 +1,64 @@
 <script lang="ts">
+	import { plan_data } from './../stores.ts';
+	import type { PageData } from './$types';
+	import type { ActionData } from './$types';
+	import type { Message } from '$db/plans';
+	import { enhance } from '$app/forms';
+	import { appStore } from '../stores';
 	import Modal from '$lib/Modal.svelte';
 	import Link from '$comps/inputs/Link.svelte';
-	import Btn_Check from './buttons/Btn_Check.svelte';
-	import Name from './inputs/Name.svelte';
+	import Btn_Check from '$comps/buttons/Btn_Check.svelte';
+	import Name from '$comps/inputs/Name.svelte';
+
+	export let messages: Message;
+	export let data: PageData;
+	export let form: ActionData;
 </script>
 
-<Modal name={'modal_is_open'}>
+<Modal name={'is_modal_open'}>
 	<div class="welcome">
 		<div class="message">
-			<h2>Hi!</h2>
-			<p>Speicher dir die unten stehenden Links ab um auf deine Arbeitsplan zugreifen zu können.</p>
+			<h2>{messages[!$appStore.is_plan_created ? 'plan_creation' : 'links'].heading}</h2>
+			<p>{messages[!$appStore.is_plan_created ? 'plan_creation' : 'links'].text}</p>
 		</div>
 
-		<div class="name">
-			<Name />
-		</div>
+		<form
+			method="POST"
+			use:enhance={({ form, data, cancel }) => {
+				console.log(form);
+				console.log(data);
 
-		<div class="links">
-			<div class="link">
-				<Link placeholder={'Admin Link'} />
+				return ({ result }) => {
+					if (result.type === 'success') {
+						// show urls
+						$appStore.is_plan_created = true;
+						// update plan data store
+						const data = result.data?.data;
+
+						delete data._id;
+						$plan_data = data;
+					}
+				};
+			}}
+		>
+			<div class="name">
+				<Name readonly={$appStore.is_plan_created} disabled={$appStore.is_plan_created} />
 			</div>
-			<div class="link">
-				<Link placeholder={'Share Link'} />
+
+			{#if $appStore.is_plan_created}
+				<div class="links">
+					<div class="link">
+						<Link placeholder={'Admin Link'} value={$plan_data.urls.admin} />
+					</div>
+					<div class="link">
+						<Link placeholder={'Share Link'} value={$plan_data.urls.share} />
+					</div>
+				</div>
+			{/if}
+			<div class="btn_check">
+				<Btn_Check border_radius={1} />
 			</div>
-		</div>
-		<div class="btn_check">
-			<Btn_Check border_radius={1} />
-		</div>
+		</form>
 	</div>
 </Modal>
 
@@ -61,9 +93,9 @@
 		font-weight: 400;
 	}
 
-  .name {
-    margin-bottom: 3rem;
-  }
+	.name {
+		margin-bottom: 3rem;
+	}
 
 	.links {
 		margin-bottom: 4rem;

@@ -1,28 +1,28 @@
 import type { InsertOneResult, ObjectId } from 'mongodb';
 import db from '$db/mongo';
 
-export interface Plan_Defaults {
-	welcome_messages: {
-		admin: {
-			heading: string;
-			description: string;
-		};
-		user: {
-			heading: string;
-			description: string;
-		};
+export interface Message {
+	[key: string]: {
+		heading: string;
+		text: string;
 	};
 }
 
-export interface Plan extends Plan_Defaults {
+export interface Plan_Defaults {
+	messages: {
+		admin: Message;
+		user: Message;
+	};
+}
+
+export interface Plan {
 	title: string;
 	urls: {
 		admin: string;
 		share: string;
 	};
 	slug: string;
-
-	dates: [
+	dates?: [
 		{
 			title: string;
 			date: string;

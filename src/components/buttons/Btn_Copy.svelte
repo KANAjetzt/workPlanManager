@@ -10,7 +10,12 @@
 	});
 </script>
 
-<button class="icon">
+<button
+	class="icon"
+	on:click={(e) => {
+		e.preventDefault();
+	}}
+>
 	<Copy fill={`${copy_icon_color}`} />
 </button>
 

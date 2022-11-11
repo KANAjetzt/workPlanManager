@@ -194,51 +194,11 @@ export function update_collection_plans() {
 			$jsonSchema: {
 				bsonType: 'object',
 				title: 'Plans Object Validation',
-				required: ['title', 'welcome_messages', 'slug', 'urls'],
+				required: ['title', 'slug', 'urls'],
 				properties: {
 					title: {
 						bsonType: 'string',
 						description: "'title' must be a string and is required"
-					},
-					welcome_messages: {
-						bsonType: 'object',
-						title: 'Welcome Messages',
-						description: "'welcome_message' must be a object and is required",
-						required: ['admin', 'user'],
-						properties: {
-							admin: {
-								bsonType: 'object',
-								title: 'Welcome Messages Admin',
-								description: "'admin' must be a object and is required",
-								required: ['heading', 'description'],
-								properties: {
-									heading: {
-										bsonType: 'string',
-										description: "'heading' must be a string and is required"
-									},
-									description: {
-										bsonType: 'string',
-										description: "'description' must be a string and is required"
-									}
-								}
-							},
-							user: {
-								bsonType: 'object',
-								title: 'Welcome Messages User',
-								description: "'user' must be a object and is required",
-								required: ['heading', 'description'],
-								properties: {
-									heading: {
-										bsonType: 'string',
-										description: "'heading' must be a string and is required"
-									},
-									description: {
-										bsonType: 'string',
-										description: "'description' must be a string and is required"
-									}
-								}
-							}
-						}
 					},
 					slug: {
 						bsonType: 'string',

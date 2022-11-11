@@ -1,10 +1,18 @@
 <script lang="ts">
+	import { appStore } from '../../stores';
 	import Check from '$icons/Check.svelte';
 
 	export let border_radius: number = 0;
 </script>
 
-<button class={`border_radius_${border_radius}`}>
+<button
+	class={`border_radius_${border_radius}`}
+	on:click={(e) => {
+		if ($appStore.is_plan_created) {
+			e.preventDefault();
+		}
+	}}
+>
 	<Check fill={'#fff'} background={true} />
 </button>
 
